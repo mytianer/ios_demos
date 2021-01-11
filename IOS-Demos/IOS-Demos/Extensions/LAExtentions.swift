@@ -15,20 +15,6 @@ extension CMKit where Base == UIImageView {
         base.kf.setImage(with: URL(string: urlString), placeholder: placeholder)
     }
     
-    func setImageWithUrlString(_ urlString:String) {
-        base.kf.setImage(with: URL(string: urlString), placeholder: UIImage.cm.defaultImage)
-    }
-    
-    func setImageWithLaiaiLogo(_ urlString:String) {
-        base.kf.setImage(with: URL(string: urlString), placeholder: UIImage.cm.defaultLogo)
-    }
-    
-    internal func setImageWithURLStrAndReturnImage(_ URL: String,  placeholder: String, success: @escaping (_ returnImage: UIImage) -> ()) {
-        base.kf.setImage(with: Foundation.URL(string: URL), placeholder: UIImage(named: placeholder), options:nil, progressBlock: nil) { (image, error, cacheType, imageURL) in
-            guard let image = image else { return }
-            success(image)
-        }
-    }
 }
 
 
@@ -187,72 +173,6 @@ open class BlockTap: UITapGestureRecognizer {
 }
 
 
-public struct ez {
-    
-    /// EZSE: Runs function after x seconds
-    public static func runThisAfterDelay(seconds: Double, after: @escaping () -> Void) {
-        runThisAfterDelay(seconds: seconds, queue: DispatchQueue.main, after: after)
-    }
-    
-    //TODO: Make this easier
-    /// EZSE: Runs function after x seconds with dispatch_queue, use this syntax: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)
-    public static func runThisAfterDelay(seconds: Double, queue: DispatchQueue, after: @escaping () -> Void) {
-        let time = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        queue.asyncAfter(deadline: time, execute: after)
-    }
-    
-    /// EZSE: Submits a block for asynchronous execution on the main queue
-    public static func runThisInMainThread(_ block: @escaping () -> Void) {
-        DispatchQueue.main.async(execute: block)
-    }
-    
-    /// EZSE: Runs in Default priority queue
-    public static func runThisInBackground(_ block: @escaping () -> Void) {
-        DispatchQueue.global(qos: .default).async(execute: block)
-    }
-    
-    /// EZSE: Runs every second, to cancel use: timer.invalidate()
-    @discardableResult public static func runThisEvery(seconds: TimeInterval, startAfterSeconds: TimeInterval, handler: @escaping (CFRunLoopTimer?) -> Void) -> Timer {
-        let fireDate = startAfterSeconds + CFAbsoluteTimeGetCurrent()
-        let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, fireDate, seconds, 0, 0, handler)
-        CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, CFRunLoopMode.commonModes)
-        return timer!
-    }
-}
-
-extension Timer {
-    
-    /// EZSE: Runs every x seconds, to cancel use: timer.invalidate()
-    public static func runThisEvery(seconds: TimeInterval, handler: @escaping (Timer?) -> Void) -> Timer {
-        let fireDate = CFAbsoluteTimeGetCurrent()
-        let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, fireDate, seconds, 0, 0, handler)
-        CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, CFRunLoopMode.commonModes)
-        return timer!
-    }
-}
-
-class LANoButton: UIButton { // 去掉button点击时出现的不好看的高亮状态
-    
-    override var isHighlighted: Bool {
-        set {
-            
-        }
-        get {
-            return false
-        }
-    }
-}
-
-class LANoCell: UITableViewCell { // 去掉cell点击时出现的不好看的高亮状态
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-    }
-    
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-    }
-    
-}
-
 class MyRegex: NSObject {
     
     let regex: NSRegularExpression?
@@ -271,20 +191,6 @@ class MyRegex: NSObject {
             return false
         }
     }
-}
-
-
-let ButtonEnableIntervelTime = 3.0
-
-extension UIButton {
-    // 防止按钮重复点击
-    func preventRepeatClick() {
-        self.isUserInteractionEnabled = false
-        ez.runThisAfterDelay(seconds: ButtonEnableIntervelTime) {
-            self.isUserInteractionEnabled = true
-        }
-    }
-    
 }
 
 extension Dictionary where Key == String {

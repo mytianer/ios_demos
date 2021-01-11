@@ -8,7 +8,6 @@
 
 import Foundation
 import Moya
-import PromiseKit
 
 
 /// 类型协议

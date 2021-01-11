@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (5.4.1)
   - Differentiator (4.0.1)
+  - Kingfisher (5.15.8):
+    - Kingfisher/Core (= 5.15.8)
+  - Kingfisher/Core (5.15.8)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -27,9 +30,11 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - Kingfisher
   - Moya
   - Moya/RxSwift
   - PromisesSwift
@@ -37,11 +42,13 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxOptional
+  - SnapKit
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Differentiator
+    - Kingfisher
     - Moya
     - PromisesObjC
     - PromisesSwift
@@ -52,10 +59,12 @@ SPEC REPOS:
     - RxOptional
     - RxRelay
     - RxSwift
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   PromisesSwift: 64085cf6e5fc1b5001f90cf31e87a1f1621fefee
@@ -66,7 +75,8 @@ SPEC CHECKSUMS:
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 09b034c42787660e263e1f272d02e70a24b65c82
+PODFILE CHECKSUM: 5a0c6f60de61b967d04f489c291edd80329dcf36
 
 COCOAPODS: 1.10.0

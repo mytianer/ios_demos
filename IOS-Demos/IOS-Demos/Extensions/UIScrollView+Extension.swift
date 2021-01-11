@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Jim1024. All rights reserved.
 //
 
-import ESPullToRefresh
+import UIKit
 
 
 extension UIScrollView {
@@ -19,15 +19,15 @@ extension UIScrollView {
 }
 
 
-public extension ES where Base: UIScrollView {
-    
-    func stopLoadingMoreAnimated() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.stopLoadingMore()
-        })
-    }
-    
-}
+//public extension ES where Base: UIScrollView {
+//
+//    func stopLoadingMoreAnimated() {
+//        UIView.animate(withDuration: 0.3, animations: {
+//            self.stopLoadingMore()
+//        })
+//    }
+//
+//}
 
 extension UIScrollView {
     

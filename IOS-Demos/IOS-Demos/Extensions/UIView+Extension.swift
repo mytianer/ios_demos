@@ -27,10 +27,10 @@ extension UIView {
         self.layer.masksToBounds = true
         let subLayer = CALayer()
         let fixframe = self.frame
-        let newFrame = CGRect(x: fixframe.minX + 5, y: fixframe.minY, width: ScreenWidth - 30, height: fixframe.height - 23)
+        let newFrame = CGRect(x: fixframe.minX + 5, y: fixframe.minY, width: fixframe.width - 30, height: fixframe.height - 23)
         subLayer.frame = newFrame
         subLayer.cornerRadius = radius
-        subLayer.backgroundColor = UIColor.cm.surface.cgColor
+        subLayer.backgroundColor = R.color.surface()?.cgColor
         subLayer.masksToBounds = false
         subLayer.shadowColor = shadowColor.cgColor // 阴影颜色
         subLayer.shadowOffset = CGSize(width: 0, height: 0) // 阴影偏移,width:向右偏移3，height:向下偏移2，默认(0, -3),这个跟shadowRadius配合使用

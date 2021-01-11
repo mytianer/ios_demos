@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Jim1024. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import ImageIO
 
 //MARK:-

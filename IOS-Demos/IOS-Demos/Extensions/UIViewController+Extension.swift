@@ -10,12 +10,6 @@ import UIKit
 
 extension UIViewController {
     
-    func showRedTipView(tipString: String) {
-        let view = RedTipLineView(frame: CGRect(x: 0, y:0, width: ScreenWidth, height:45), tipString: tipString)
-        self.view.addSubview(view)
-        self.view.bringSubviewToFront(view)
-    }
-    
     private struct AssociatedKeys {
         static var operaionKey = "UIViewController.operaion"
     }

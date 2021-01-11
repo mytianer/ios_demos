@@ -21,4 +21,7 @@ target 'IOS-Demos' do
   pod 'RxOptional'
   pod 'Moya/RxSwift'
   
+  pod 'Kingfisher'
+  pod 'SnapKit'
+  
 end

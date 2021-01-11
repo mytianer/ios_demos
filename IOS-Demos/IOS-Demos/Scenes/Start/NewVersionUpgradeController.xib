@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewVersionUpgradeController" customModule="LaiAi" customModuleProvider="target">
+            <connections>
+                <outlet property="closeBun" destination="lpb-dT-b6G" id="vQy-e6-boQ"/>
+                <outlet property="confirmBtn" destination="SU2-rP-2mq" id="iTj-f0-gvy"/>
+                <outlet property="infoLabel" destination="LG3-Yt-DJU" id="nFT-bc-6zm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HX-Gx-aNg">
+                    <rect key="frame" x="30" y="166.5" width="315" height="334.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RR-yf-bSs">
+                            <rect key="frame" x="0.0" y="15" width="315" height="319.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发现新版本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iii-zU-asw">
+                                    <rect key="frame" x="101.5" y="85" width="112" height="27"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <color key="textColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LG3-Yt-DJU">
+                                    <rect key="frame" x="21" y="129" width="273" height="107.5"/>
+                                    <string key="text">• 新增了哪些优秀的新功能，比如商城限时购和圈子
+• 修复了一些bug,balabala
+• 商城新版ui交互，给您更好的购物体验
+• 这是你没玩过的全新版本
+</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-rP-2mq">
+                                    <rect key="frame" x="33" y="257.5" width="249" height="40"/>
+                                    <color key="backgroundColor" name="primaryVariant" red="0.965" green="0.298" blue="0.145" alpha="1.000" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="0vv-hM-4Yf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="立即升级">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="upgradeClick:" destination="-1" eventType="touchUpInside" id="VUh-i2-Nao"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="SU2-rP-2mq" secondAttribute="trailing" constant="33" id="L31-wq-5pQ"/>
+                                <constraint firstItem="SU2-rP-2mq" firstAttribute="top" secondItem="LG3-Yt-DJU" secondAttribute="bottom" constant="21" id="b68-PT-yKE"/>
+                                <constraint firstItem="iii-zU-asw" firstAttribute="top" secondItem="6RR-yf-bSs" secondAttribute="top" constant="85" id="bLc-rL-t0c"/>
+                                <constraint firstItem="LG3-Yt-DJU" firstAttribute="leading" secondItem="6RR-yf-bSs" secondAttribute="leading" constant="21" id="dj8-jD-ikE"/>
+                                <constraint firstItem="iii-zU-asw" firstAttribute="centerX" secondItem="6RR-yf-bSs" secondAttribute="centerX" id="e4m-SU-QLl"/>
+                                <constraint firstAttribute="trailing" secondItem="LG3-Yt-DJU" secondAttribute="trailing" constant="21" id="fkv-TC-3c4"/>
+                                <constraint firstItem="LG3-Yt-DJU" firstAttribute="top" secondItem="iii-zU-asw" secondAttribute="bottom" constant="17" id="hvP-Un-C3Z"/>
+                                <constraint firstAttribute="bottom" secondItem="SU2-rP-2mq" secondAttribute="bottom" constant="22" id="kZE-Xn-maE"/>
+                                <constraint firstItem="SU2-rP-2mq" firstAttribute="leading" secondItem="6RR-yf-bSs" secondAttribute="leading" constant="33" id="nq0-a2-Cqd"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upgrade_rocket" translatesAutoresizingMaskIntoConstraints="NO" id="Wor-mK-7ji">
+                            <rect key="frame" x="38.5" y="0.0" width="238" height="92"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpb-dT-b6G">
+                            <rect key="frame" x="275" y="15" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="j0G-Wj-bmr"/>
+                                <constraint firstAttribute="width" constant="40" id="qxr-hB-elL"/>
+                            </constraints>
+                            <state key="normal" image="upgrade_delete"/>
+                            <connections>
+                                <action selector="closeClick:" destination="-1" eventType="touchUpInside" id="Ttw-XD-lp3"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="lpb-dT-b6G" firstAttribute="top" secondItem="8HX-Gx-aNg" secondAttribute="top" constant="15" id="3fx-IX-Cjv"/>
+                        <constraint firstAttribute="bottom" secondItem="6RR-yf-bSs" secondAttribute="bottom" id="Hht-aP-7Q2"/>
+                        <constraint firstItem="Wor-mK-7ji" firstAttribute="centerX" secondItem="8HX-Gx-aNg" secondAttribute="centerX" id="MvE-G3-7O3"/>
+                        <constraint firstAttribute="trailing" secondItem="lpb-dT-b6G" secondAttribute="trailing" id="VlQ-8L-PXB"/>
+                        <constraint firstItem="6RR-yf-bSs" firstAttribute="leading" secondItem="8HX-Gx-aNg" secondAttribute="leading" id="bDp-YN-1mu"/>
+                        <constraint firstItem="6RR-yf-bSs" firstAttribute="top" secondItem="8HX-Gx-aNg" secondAttribute="top" constant="15" id="dbD-e9-Lwk"/>
+                        <constraint firstItem="Wor-mK-7ji" firstAttribute="top" secondItem="8HX-Gx-aNg" secondAttribute="top" id="iT7-Nb-iH2"/>
+                        <constraint firstAttribute="trailing" secondItem="6RR-yf-bSs" secondAttribute="trailing" id="xbF-jy-z9N"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.39744755993150682" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8HX-Gx-aNg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0xy-Qp-rdU"/>
+                <constraint firstAttribute="trailing" secondItem="8HX-Gx-aNg" secondAttribute="trailing" constant="30" id="8lE-wX-u83"/>
+                <constraint firstItem="8HX-Gx-aNg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="eIE-vb-eYU"/>
+                <constraint firstItem="8HX-Gx-aNg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ws8-Cp-6lQ"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="upgrade_delete" width="14" height="14"/>
+        <image name="upgrade_rocket" width="238" height="92"/>
+    </resources>
+</document>

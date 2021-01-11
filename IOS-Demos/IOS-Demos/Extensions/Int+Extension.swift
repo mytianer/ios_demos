@@ -15,24 +15,12 @@ extension Int {
         return String(self)
     }
     
-    /// EZSE: Converts integer value to Double.
-    public var toDouble: Double { return Double(self) }
-    
-    public var toBool: Bool {
-        return self == 1 ? true : false
+    var toDouble: Double {
+        return Double(self)
     }
     
-    func toString(length: Int = 0) -> String {
-        let remind = length - toString.count
-        if remind > 0 {
-            var target = toString
-            for _ in 0..<remind {
-                target = "0" + target
-            }
-            return target
-        } else {
-            return toString
-        }
+    var toBool: Bool {
+        return self == 1 ? true : false
     }
 }
 

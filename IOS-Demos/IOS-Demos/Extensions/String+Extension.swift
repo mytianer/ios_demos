@@ -6,28 +6,7 @@
 //  Copyright © 2018年 Jim1024. All rights reserved.
 //
 
-import Foundation
-
-//MARK:-
-extension NSMutableAttributedString {
-    
-    //根据正则表达式改变文字颜色
-   public func changeTextChange(regex: String, text: String, color: UIColor, font: UIFont) -> NSMutableAttributedString
-    {
-        let attributeString = NSMutableAttributedString(string: text)
-        do {
-            let regexExpression = try NSRegularExpression(pattern: regex, options: NSRegularExpression.Options())
-            let result = regexExpression.matches(in: text, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, text.count))
-            for item in result {
-                attributeString.addAttributes([NSAttributedString.Key.font:font, NSAttributedString.Key.foregroundColor: color], range: item.range)
-            }
-        } catch {
-            print("Failed with error: \(error)")
-        }
-        return attributeString
-    }
-}
-
+import UIKit
 
 extension String {
     
@@ -186,22 +165,22 @@ extension String {
         return "\(preString)************\(subFourString)"
     }
     
-    var md5 : String{
-        let str = self.cString(using: String.Encoding.utf8)
-        let strLen = CC_LONG(self.lengthOfBytes(using: String.Encoding.utf8))
-        let digestLen = Int(CC_MD5_DIGEST_LENGTH)
-        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
-        
-        CC_MD5(str!, strLen, result)
-        
-        let hash = NSMutableString()
-        for i in 0 ..< digestLen {
-            hash.appendFormat("%02x", result[i])
-        }
-        //        result.deinitialize()
-        let lowStr = String(format: hash as String)
-        return lowStr.uppercased()
-    }
+//    var md5 : String{
+//        let str = self.cString(using: String.Encoding.utf8)
+//        let strLen = CC_LONG(self.lengthOfBytes(using: String.Encoding.utf8))
+//        let digestLen = Int(CC_MD5_DIGEST_LENGTH)
+//        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
+//
+//        CC_MD5(str!, strLen, result)
+//
+//        let hash = NSMutableString()
+//        for i in 0 ..< digestLen {
+//            hash.appendFormat("%02x", result[i])
+//        }
+//        //        result.deinitialize()
+//        let lowStr = String(format: hash as String)
+//        return lowStr.uppercased()
+//    }
     
     var isIDCard: Bool {
         let pattern = "(^[0-9]{15}$)|([0-9]{17}([0-9]|X)$)";
@@ -235,9 +214,9 @@ extension String {
         }
     }
     
-    public func toFloat() -> CGFloat? {
+    public func toFloat() -> Float? {
         if let num = NumberFormatter().number(from: self) {
-            return CGFloat(num.floatValue)
+            return num.floatValue
         } else {
             return nil
         }
@@ -262,7 +241,7 @@ extension String {
         return pred.evaluate(with: self)
     }
     
-    // 返回只显示银行卡后四位
+    // 返回只显示银行CGFloat位
     var getFourBankNumber: String {
         var subFourString = String()
         if self.count > 4 {
