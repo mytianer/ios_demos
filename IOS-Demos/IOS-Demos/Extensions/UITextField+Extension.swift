@@ -81,9 +81,9 @@ extension UILabel {
     func getAttributeMoneyLabel(amount: String) {
         let aString = NSMutableAttributedString(string: "")
         let money = NSAttributedString(string: "¥ ", attributes: [.font: UIFont.pingFangSC(size: 12, .medium),
-                                                                   .foregroundColor: R.color.primary()])
+                                                                   .foregroundColor: R.color.primary()!])
         let amount = NSAttributedString(string: amount, attributes: [.font: UIFont.pingFangSC(size: 18, .medium),
-                                                                     .foregroundColor: R.color.primary()])
+                                                                     .foregroundColor: R.color.primary()!])
         aString.append(money)
         aString.append(amount)
         self.attributedText = aString

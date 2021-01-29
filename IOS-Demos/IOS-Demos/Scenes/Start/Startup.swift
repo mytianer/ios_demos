@@ -13,15 +13,15 @@ import Kingfisher
 
 class Startup {
     
-//    class func start(autoLogin: Bool) {
-//        (autoLogin ? loginPromise().then{ launchAdPromise() } : loginPromise())
-//            .delay(1)
-//            .ensure {
-//                self.checkAppState()
-//                self.checkNewVersion()
-//            }
-//            .catchApiError(false)
-//    }
+    class func start(autoLogin: Bool) {
+        (autoLogin ? loginPromise().then{ launchAdPromise() } : loginPromise())
+            .delay(1)
+            .always {
+                self.checkAppState()
+                self.checkNewVersion()
+            }
+            .catchApiError(false)
+    }
     
     /// 登录逻辑线
     private class func loginPromise() -> Promise<Void> {
@@ -33,9 +33,9 @@ class Startup {
     }
     
     /// 启动广告逻辑线
-//    private class func launchAdPromise() -> Promise<Void> {
-//        return Api.Login.fetchAdvertisementBanner(position: Model.AdPosition.launchAd)
-//            .then { models in
+    private class func launchAdPromise() -> Promise<Void> {
+        return Api.Login.fetchAdvertisementBanner(position: 3)
+            .then { models in
 //                guard let adVc = UIApplication.shared.keyWindow?.rootViewController as? LaunchAdvertisementController else { return }
 //                var url: String? = nil
 //                var targetModel: Model.AdModel?
@@ -56,9 +56,9 @@ class Startup {
 //                adVc.setAd(url: url, adClick: {
 //                    self.handleLaunchAd(with: targetModel)
 //                })
-//            }
-//            .delay(3)
-//    }
+            }
+            .delay(3)
+    }
     
     /// 处理启动页广告
     private class func handleLaunchAd(with model: Model.AdModel?) {

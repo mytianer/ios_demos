@@ -222,6 +222,14 @@ extension String {
         }
     }
     
+    var urlEncode: String {
+        var set = CharacterSet()
+        set.formUnion(CharacterSet(charactersIn: "-_.!~*;/?:@&=+$,#"))
+        set.formUnion(CharacterSet.letters)
+        set.formUnion(CharacterSet.alphanumerics)
+        return addingPercentEncoding(withAllowedCharacters: set) ?? self
+    }
+    
     var isChinese: Bool {
         let pattern = "[\\u4e00-\\u9fa5]+$"
         let predicate = NSPredicate(format: "SELF MATCHES %@", pattern)

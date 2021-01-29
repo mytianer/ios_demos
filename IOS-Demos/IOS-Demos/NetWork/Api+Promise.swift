@@ -17,9 +17,9 @@ extension Promise where Value: Response {
                 if codeMsg.code == "4004" {
 //                    CMUser.logOut()
                 }
-//                if codeMsg.success == false {
-//                    throw CMError.api(codeMsg: codeMsg)
-//                }
+                if codeMsg.code != "0000" {
+                    throw CMError.api(codeMsg: codeMsg)
+                }
             }
         }
     }
